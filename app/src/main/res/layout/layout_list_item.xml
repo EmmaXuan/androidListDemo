@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <!-- databinding 想引用 visibility 就import上面的view.View -->
+        <variable
+            name="itemVo"
+            type="com.emma.recyclerviewdatademo.dataModel.vo.ListItemVo"/>
+        <!-- name="itemVo" 隨便你取 不要跟其他layout 重複就好-->
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="@{itemVo.title}"/>
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="10dp"
+            android:text="@{itemVo.content}"/>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/explorer"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/title2"
+            android:visibility="@{itemVo.imgShow ? View.VISIBLE : View.GONE}"/>
+        <Button
+            android:id="@+id/clickBtn"
+            android:layout_width="64dp"
+            android:layout_height="27.8dp"
+            android:layout_marginEnd="2dp"
+            android:text="click me"
+            android:textSize="13sp"
+            android:textColor="@color/colorWhite"
+            android:layout_below="@+id/title2"
+            android:background="@drawable/radius_three_noline_bluebg"
+            android:layout_alignParentEnd="true"/>
+
+
+    </RelativeLayout>
+</layout>

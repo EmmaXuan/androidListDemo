@@ -1,0 +1,9 @@
+1.open databinding enabled
+--------  add in build.gradle 中的 android{} 裡面-----
+    android {
+        dataBinding {
+            enabled = true
+        }
+    }
+--------------------------------------
+2.layout 若要使用 databinding，layout.xml裡，必須用<layout></layout>包在最外面
